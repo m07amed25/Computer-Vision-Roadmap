@@ -4,16 +4,17 @@ Welcome to your journey to becoming a **Computer Vision Master using PyTorch**! 
 
 ---
 
-## 📆 Weekly Plan Overview
+## 🗖️ Weekly Plan Overview
 
 ### **Week 1–2: CV + PyTorch Foundations**
 
 **✅ Objectives:**
 
-* Understand how computers "see" images (pixels, channels, formats)
-* Learn PyTorch basics: tensors, gradients, autograd, modules
-* Build and train your first CNN using MNIST
-* Explore model evaluation: accuracy, loss functions
+* Understand image representations: RGB, grayscale, channels
+* Understand what a tensor is and how PyTorch uses it
+* Learn backpropagation and automatic differentiation
+* Implement a simple CNN using PyTorch
+* Visualize data and loss curves
 
 **📚 Resources:**
 
@@ -21,16 +22,22 @@ Welcome to your journey to becoming a **Computer Vision Master using PyTorch**! 
 * PyTorch Docs (Tensors & Autograd): [https://pytorch.org/tutorials/beginner/blitz/autograd\_tutorial.html](https://pytorch.org/tutorials/beginner/blitz/autograd_tutorial.html)
 * CS231n Lecture 1 & 2
 
+**👨‍💻 What to Learn:**
+
+* PyTorch Basics: `torch.Tensor`, `autograd`, `nn.Module`, `optimizer`, `loss`
+* Model Training Loop: forward pass, backward pass, update step
+* Visualizing with matplotlib
+
 **👨‍💻 Mini Project:**
 
-* Classify handwritten digits using a 2-layer CNN
-* Try different optimizers (SGD, Adam)
+* Classify MNIST using a 2-layer CNN
+* Plot training/validation curves
 
 **🧠 Concepts to Master:**
 
-* Tensor manipulation
-* Backpropagation intuition
-* Epochs, batch size, overfitting
+* Autograd mechanics
+* Weight initialization
+* Training loop & evaluation metrics
 
 ---
 
@@ -38,9 +45,9 @@ Welcome to your journey to becoming a **Computer Vision Master using PyTorch**! 
 
 **✅ Objectives:**
 
-* Learn architectures: LeNet → AlexNet → VGG → ResNet → MobileNet
-* Understand transfer learning: freezing vs fine-tuning
-* Regularization techniques: Dropout, L2 norm, BatchNorm
+* Learn core CNN architectures (LeNet, AlexNet, VGG, ResNet, MobileNet)
+* Compare and contrast them in terms of depth, performance, and parameters
+* Apply transfer learning using pretrained models from torchvision
 
 **📚 Resources:**
 
@@ -48,16 +55,22 @@ Welcome to your journey to becoming a **Computer Vision Master using PyTorch**! 
 * torchvision.models: [https://pytorch.org/vision/stable/models.html](https://pytorch.org/vision/stable/models.html)
 * [ResNet Paper (He et al.)](https://arxiv.org/abs/1512.03385)
 
+**👨‍💻 What to Learn:**
+
+* How pretrained weights work
+* Freezing layers vs. fine-tuning
+* BatchNorm, Dropout, weight decay
+
 **👨‍💻 Mini Project:**
 
-* Fine-tune ResNet-18 on TrashNet or Cats vs Dogs
-* Compare feature extraction vs full fine-tuning
+* Train ResNet18 on TrashNet dataset with frozen layers
+* Compare full fine-tuning vs. feature extraction
 
 **🧠 Concepts to Master:**
 
-* Residual connections
-* Parameter freezing
-* Transfer learning workflows
+* Feature hierarchies in CNNs
+* Overfitting and regularization
+* Optimizer schedules (e.g. LR decay)
 
 ---
 
@@ -65,25 +78,31 @@ Welcome to your journey to becoming a **Computer Vision Master using PyTorch**! 
 
 **✅ Objectives:**
 
-* Master `torchvision.transforms` & `Albumentations`
-* Build fast & efficient data loaders
-* Handle imbalanced classes with weighted sampling
+* Improve model generalization using augmentations
+* Understand transformations: flip, rotate, crop, normalize
+* Build PyTorch `Dataset` and `DataLoader` from scratch
 
 **📚 Resources:**
 
 * [Albumentations Docs](https://albumentations.ai/docs/)
 * PyTorch Data Loading Best Practices: [https://pytorch.org/tutorials/beginner/data\_loading\_tutorial.html](https://pytorch.org/tutorials/beginner/data_loading_tutorial.html)
 
+**👨‍💻 What to Learn:**
+
+* `torchvision.transforms` pipeline
+* Custom `Dataset` and `DataLoader`
+* `WeightedRandomSampler`, `SubsetRandomSampler`
+
 **👨‍💻 Mini Project:**
 
-* Create a custom Dataset class with random augmentations
-* Visualize samples using `matplotlib` and `cv2`
+* Build a dataset class for TrashNet with augmentations
+* Plot augmented samples and analyze class balance
 
 **🧠 Concepts to Master:**
 
-* Compose vs Random transforms
-* DataLoader `num_workers`, `pin_memory`
-* Oversampling vs class weights
+* Data leakage
+* Class imbalance handling
+* Efficient loading using `num_workers`, `pin_memory`
 
 ---
 
@@ -91,9 +110,9 @@ Welcome to your journey to becoming a **Computer Vision Master using PyTorch**! 
 
 **✅ Objectives:**
 
-* Learn bounding box formats & IoU
-* Understand anchor boxes, NMS, confidence thresholding
-* Train and evaluate YOLOv5 or SSD on a custom dataset
+* Learn how bounding boxes are represented
+* Understand YOLO architecture (head, anchors, NMS)
+* Use Roboflow for annotation + YOLOv5 for training
 
 **📚 Resources:**
 
@@ -101,16 +120,22 @@ Welcome to your journey to becoming a **Computer Vision Master using PyTorch**! 
 * [Roboflow Annotation Tool](https://roboflow.com/)
 * [FastObjectDetection with YOLOv8](https://docs.ultralytics.com/)
 
+**👨‍💻 What to Learn:**
+
+* How to annotate datasets
+* Intersection over Union (IoU), Precision, Recall, mAP
+* YOLO training config (img size, epochs, confidence threshold)
+
 **👨‍💻 Mini Project:**
 
-* Real-time object detection from webcam
-* Export model to ONNX and run with OpenCV
+* Annotate 100 images with Roboflow
+* Train YOLOv5 on them and test webcam inference
 
 **🧠 Concepts to Master:**
 
-* Mean Average Precision (mAP)
-* Anchor tuning
-* Real-time inference tips
+* Loss functions in detection (GIoU, obj loss)
+* Postprocessing with Non-Max Suppression (NMS)
+* Custom training pipelines
 
 ---
 
@@ -118,9 +143,8 @@ Welcome to your journey to becoming a **Computer Vision Master using PyTorch**! 
 
 **✅ Objectives:**
 
-* Learn UNet, Mask R-CNN, DeepLabv3+
-* Apply semantic segmentation to pixel-level tasks
-* Train segmentation models on custom data
+* Understand pixel-level classification vs object-level masks
+* Explore UNet, Mask R-CNN, DeepLabv3+
 
 **📚 Resources:**
 
@@ -128,16 +152,22 @@ Welcome to your journey to becoming a **Computer Vision Master using PyTorch**! 
 * [Segmentation Models Library](https://github.com/qubvel/segmentation_models.pytorch)
 * PyTorch segmentation examples: [https://pytorch.org/vision/stable/models.html#semantic-segmentation](https://pytorch.org/vision/stable/models.html#semantic-segmentation)
 
+**👨‍💻 What to Learn:**
+
+* Binary vs multi-class segmentation
+* DICE coefficient, pixel accuracy
+* Using `nn.CrossEntropyLoss` for segmentation
+
 **👨‍💻 Mini Project:**
 
-* Segment recyclable vs non-recyclable items using UNet
-* Visualize masks overlaid on original images
+* Train UNet on TrashNet masks
+* Overlay masks with `cv2.addWeighted`
 
 **🧠 Concepts to Master:**
 
-* DICE loss vs Cross Entropy
-* Binary & multi-class segmentation
-* IoU, pixel accuracy
+* Patch extraction
+* Upsampling methods: transpose conv, bilinear
+* Label smoothing
 
 ---
 
@@ -145,25 +175,29 @@ Welcome to your journey to becoming a **Computer Vision Master using PyTorch**! 
 
 **✅ Objectives:**
 
-* Visualize which parts of an image activate certain filters
-* Use Grad-CAM and SHAP for model interpretation
-* Debug exploding/vanishing gradients
+* Visualize layer-wise activations and filter responses
+* Apply Grad-CAM and interpret CNN decisions
 
 **📚 Resources:**
 
 * [Captum Library](https://captum.ai/)
 * [Grad-CAM from scratch GitHub](https://github.com/jacobgil/pytorch-grad-cam)
 
+**👨‍💻 What to Learn:**
+
+* How Grad-CAM works (relevance weighting)
+* Captum APIs: `Saliency`, `IntegratedGradients`, `Occlusion`
+
 **👨‍💻 Mini Project:**
 
-* Apply Grad-CAM to ResNet on a custom dataset
-* Compare activation maps for correct vs misclassified images
+* Compare CAM outputs between correct/misclassified samples
+* Debug vanishing gradient in deep CNN with plotting
 
 **🧠 Concepts to Master:**
 
-* Model interpretability techniques
-* Layer-wise relevance propagation
-* Sanity-checking predictions
+* Gradient flow inspection
+* Activation histograms
+* Visual saliency
 
 ---
 
@@ -171,25 +205,31 @@ Welcome to your journey to becoming a **Computer Vision Master using PyTorch**! 
 
 **✅ Objectives:**
 
-* Compress models via pruning & quantization
-* Export models to ONNX, TorchScript
-* Deploy to edge: Jetson Nano, Raspberry Pi, TFLite
+* Export and run PyTorch models outside of Python
+* Learn pruning, quantization, ONNX, TorchScript
+* Simulate Jetson Nano/RPi with QEMU or Docker
 
 **📚 Resources:**
 
 * [PyTorch Quantization Guide](https://pytorch.org/docs/stable/quantization.html)
 * [ONNX Export Tutorial](https://pytorch.org/tutorials/advanced/super_resolution_with_onnxruntime.html)
 
+**👨‍💻 What to Learn:**
+
+* Post-training quantization
+* Dynamic quantization
+* TorchScript tracing vs scripting
+
 **👨‍💻 Mini Project:**
 
-* Convert YOLOv5 to ONNX
-* Run inference on edge device (Jetson or simulate)
+* Quantize a YOLOv5 model and export to ONNX
+* Run with OpenCV DNN module
 
 **🧠 Concepts to Master:**
 
-* Post-training quantization
-* Dynamic vs static quant
-* ONNX optimization tools
+* Model size/performance tradeoffs
+* GPU inference vs CPU
+* TFLite vs ONNX
 
 ---
 
@@ -197,9 +237,8 @@ Welcome to your journey to becoming a **Computer Vision Master using PyTorch**! 
 
 **✅ Objectives:**
 
-* Learn about contrastive learning (SimCLR, BYOL, MoCo)
-* Explore Vision Transformers (ViT, DeiT)
-* Understand Foundation Models: CLIP, SAM, DINO, BLIP
+* Learn embeddings + contrastive loss (SimCLR)
+* Use pre-trained CLIP, DINO, SAM models
 
 **📚 Resources:**
 
@@ -207,16 +246,22 @@ Welcome to your journey to becoming a **Computer Vision Master using PyTorch**! 
 * [Segment Anything GitHub (Meta)](https://github.com/facebookresearch/segment-anything)
 * [Hugging Face CV Models](https://huggingface.co/models?pipeline_tag=image-classification)
 
+**👨‍💻 What to Learn:**
+
+* How CLIP maps text+image to same space
+* Segment Anything architecture (ViT + mask decoder)
+* Zero-shot and few-shot inference
+
 **👨‍💻 Mini Project:**
 
-* Zero-shot image classification using CLIP
-* Try CLIP+SAM pipeline for vision-language segmentation
+* Use CLIP to classify 10 object types zero-shot
+* Combine SAM + CLIP to segment + describe objects
 
 **🧠 Concepts to Master:**
 
-* Embedding space alignment
-* Transformers for images
-* Prompt engineering for vision models
+* Prompt engineering
+* Visual-language embedding
+* Diffusion in segmentation
 
 ---
 
@@ -240,7 +285,7 @@ Welcome to your journey to becoming a **Computer Vision Master using PyTorch**! 
 
 ---
 
-## 🧰 Tools Checklist (Use Throughout):
+## 🛠️ Tools Checklist (Use Throughout):
 
 * PyTorch + Torchvision
 * OpenCV, Matplotlib, Albumentations
