@@ -1,4 +1,4 @@
-# 🧠 Computer Vision Master Plan (12 Weeks)
+# 🧠 Computer Vision Plan (12 Weeks)
 
 Welcome to your journey to becoming a **Computer Vision Master using PyTorch**! This README outlines a structured weekly learning path, complete with learning objectives, resource links, coding projects, and key concepts to take you from solid ML basics to state-of-the-art GenAI computer vision capabilities. Let’s gooo 💻📸🚀
 
