@@ -1,311 +1,266 @@
-# 🧠 Computer Vision Plan (12 Weeks)
+# 🧠 Computer Vision Mastery Roadmap (13 Weeks)
 
-Welcome to your journey to becoming a **Computer Vision Master using PyTorch**! This README outlines a structured weekly learning path, complete with learning objectives, detailed learning topics, resource links, coding projects, and key concepts to take you from solid ML basics to state-of-the-art GenAI computer vision capabilities. Let’s gooo 💻📸🚀
+Welcome to your journey to becoming a **Computer Vision Master using PyTorch**! This comprehensive roadmap outlines a detailed week-by-week plan, including specific learning objectives, hands-on projects, and essential concepts. We focus only on PyTorch throughout to give you deep, practical expertise.
 
 ---
 
-## 🗖️ Weekly Plan Overview
+## 🗓 Weekly Curriculum Overview
 
-### **Week 1–2: CV + PyTorch Foundations**
+### **📅 Week 1–2: ML + PyTorch Foundations**
 
-**✅ Objectives:**
+**🎯 Objectives:**
 
-* Understand image formats: RGB, grayscale, channels, pixel ranges
-* Learn tensors: creation, shape, slicing, broadcasting
-* Get comfortable with PyTorch core modules
-* Learn the full training loop: forward, loss, backward, optimizer step
-* Visualize data, loss curves, and predictions
+* Understand image types (RGB, grayscale), tensors, and PyTorch structure
+* Master PyTorch tensors, training loop, optimizers, and loss functions
+* Build and visualize a basic CNN
 
-**📚 Resources:**
+**📘 Learn This:**
 
-* [🔥 YouTube Course: Intro to CV with PyTorch](https://www.youtube.com/playlist?list=PLS84ypkqWiQ8-TL0AmTRynkzK0v-d4C5m)
-* PyTorch Docs (Tensors & Autograd): [https://pytorch.org/tutorials/beginner/blitz/autograd\_tutorial.html](https://pytorch.org/tutorials/beginner/blitz/autograd_tutorial.html)
-* CS231n Lecture 1 & 2
+* `torch.tensor()`, `.shape`, `.view()`, `.unsqueeze()`
+* `autograd`, `.backward()`, gradient flow
+* `nn.Module`, `forward()`, `nn.Linear`, `nn.Conv2d`, `nn.ReLU`
+* Optimizers: `torch.optim.SGD`, `Adam`, LR scheduling
+* Loss functions: `nn.CrossEntropyLoss`, `nn.MSELoss`
 
-**👨‍💻 What to Learn:**
+**🧪 Mini Project:**
 
-* Tensors: `torch.tensor()`, `requires_grad`, `.backward()`
-* Layers: `nn.Linear`, `nn.ReLU`, `nn.Conv2d`, `nn.Softmax`
-* Modules: `nn.Module`, `forward()` method
-* Optimizers: `SGD`, `Adam`, learning rate tuning
-* Losses: `CrossEntropyLoss`, `MSELoss`
-* Data loading: `DataLoader`, `TensorDataset`
+* Train 2-layer CNN on MNIST
+* Visualize predictions and training curves
 
-**👨‍💻 Mini Project:**
+**🧠 Master Concepts:**
 
-* Classify MNIST using a 2-layer CNN
-* Visualize sample predictions
-* Plot training/validation accuracy and loss
-
-**🧠 Concepts to Master:**
-
-* Difference between weights and activations
-* How gradients flow
+* Autograd, weights vs. activations
 * Underfitting vs. overfitting
 
 ---
 
-### **Week 3–4: CNN Architectures + Transfer Learning**
+### **📅 Week 3–4: CNN Architectures + Transfer Learning**
 
-**✅ Objectives:**
+**🎯 Objectives:**
 
-* Explore CNN building blocks in detail
-* Learn standard architectures from scratch and pre-trained
-* Apply transfer learning using torchvision
+* Understand classic CNNs and pre-trained model use
 
-**📚 Resources:**
+**📘 Learn This:**
 
-* [Stanford CS231n: CNN Architectures](https://cs231n.github.io/convolutional-networks/)
-* torchvision.models: [https://pytorch.org/vision/stable/models.html](https://pytorch.org/vision/stable/models.html)
-* [ResNet Paper (He et al.)](https://arxiv.org/abs/1512.03385)
+* Architecture: LeNet, AlexNet, VGG, ResNet, MobileNet
+* Layers: `nn.Conv2d`, `MaxPool2d`, `BatchNorm2d`, `Dropout`
+* Freezing/unfreezing layers, transfer learning strategies
+* Using `torchvision.models`
 
-**👨‍💻 What to Learn:**
+**🧪 Mini Project:**
 
-* Conv layers: `nn.Conv2d`, `nn.MaxPool2d`
-* BatchNorm, Dropout, AdaptiveAvgPool2d
-* Flattening layers, FC layers
-* Transfer learning strategies: freeze base, fine-tune head
-* `model.eval()` vs `model.train()` modes
+* Fine-tune ResNet18 on TrashNet
+* Compare feature extraction vs. full fine-tuning
 
-**👨‍💻 Mini Project:**
+**🧠 Master Concepts:**
 
-* Load ResNet18 from torchvision
-* Fine-tune on TrashNet dataset
-* Experiment with freezing different layers
-
-**🧠 Concepts to Master:**
-
-* Depth vs. width in CNNs
-* Role of residual connections
-* Transfer learning vs. training from scratch
+* Residual blocks, depth vs. width, overfitting control
 
 ---
 
-### **Week 5: Data Augmentation & Pipelines**
+### **📅 Week 5: Data Augmentation + PyTorch Pipelines**
 
-**✅ Objectives:**
+**🎯 Objectives:**
 
-* Learn data preprocessing best practices
-* Boost generalization with strong augmentations
-* Write custom PyTorch `Dataset` classes
+* Implement efficient data pipelines
 
-**📚 Resources:**
+**📘 Learn This:**
 
-* [Albumentations Docs](https://albumentations.ai/docs/)
-* [Data Loading Tutorial](https://pytorch.org/tutorials/beginner/data_loading_tutorial.html)
+* `torchvision.transforms`: `Compose`, `Resize`, `ToTensor`, `Normalize`, `RandomCrop`
+* Custom `Dataset` class: `__len__`, `__getitem__`
+* `DataLoader` with `num_workers`, `pin_memory`
+* Imbalance handling: `WeightedRandomSampler`
 
-**👨‍💻 What to Learn:**
+**🧪 Mini Project:**
 
-* Transformations: `Resize`, `ToTensor`, `Normalize`, `RandomCrop`, `RandomHorizontalFlip`
-* Composing transforms: `transforms.Compose()`
-* Creating `__getitem__`, `__len__`
-* Handling class imbalance with `WeightedRandomSampler`
+* Load and augment TrashNet
+* Visualize batches with Matplotlib
 
-**👨‍💻 Mini Project:**
+**🧠 Master Concepts:**
 
-* Create custom dataset class for TrashNet
-* Use Albumentations to apply augmentations
-* Visualize batch with `matplotlib`
-
-**🧠 Concepts to Master:**
-
-* Difference between train/test transforms
-* Why augmentation prevents overfitting
-* Data pipeline performance tips
+* Why test/val transforms differ
+* Overfitting prevention via augmentations
 
 ---
 
-### **Week 6–7: Object Detection (YOLO Time!)**
+### **📅 Week 6–7: Object Detection with YOLO**
 
-**✅ Objectives:**
+**🎯 Objectives:**
 
-* Learn bounding box regression and metrics
-* Train your own YOLOv5 model
+* Annotate, train, and evaluate object detectors
 
-**📚 Resources:**
+**📘 Learn This:**
 
-* [YOLOv5 Official Repo](https://github.com/ultralytics/yolov5)
-* [Roboflow Annotation Tool](https://roboflow.com/)
-* [FastObjectDetection with YOLOv8](https://docs.ultralytics.com/)
+* YOLOv5/v8 architecture: backbone, neck, head
+* Metrics: IoU, Precision, Recall, mAP
+* Annotation tools (Roboflow), formats (YOLO, COCO)
+* Training YOLO with custom configs
 
-**👨‍💻 What to Learn:**
+**🧪 Mini Project:**
 
-* YOLO architecture: backbone, neck, head
-* Anchors, strides, NMS
-* Labeling formats (COCO, Pascal VOC)
-* Training script config (epochs, batch size, img size)
+* Annotate TrashNet
+* Train YOLOv5s and evaluate on webcam
 
-**👨‍💻 Mini Project:**
+**🧠 Master Concepts:**
 
-* Annotate 100 images with Roboflow
-* Export in YOLO format
-* Train YOLOv5s on TrashNet
-* Inference with webcam
-
-**🧠 Concepts to Master:**
-
-* IoU, precision, recall, mAP\@.5
-* Multi-class object detection
-* Real-time inference tricks
+* Anchor boxes, NMS, confidence thresholds
+* Bounding box loss types (CIoU, GIoU)
 
 ---
 
-### **Week 8: Semantic & Instance Segmentation**
+### **📅 Week 8: Semantic & Instance Segmentation**
 
-**✅ Objectives:**
+**🎯 Objectives:**
 
-* Learn how to assign a class to each pixel
-* Use segmentation models for pixel-wise predictions
+* Segment objects at pixel level
 
-**📚 Resources:**
+**📘 Learn This:**
 
-* [UNet Paper](https://arxiv.org/abs/1505.04597)
-* [Segmentation Models PyTorch](https://github.com/qubvel/segmentation_models.pytorch)
+* UNet architecture (skip connections, upsampling)
+* Mask R-CNN, DeepLabV3+ overview
+* Loss functions: Dice, BCEWithLogits, Focal
+* Using `SegmentationModels-PyTorch`
 
-**👨‍💻 What to Learn:**
+**🧪 Mini Project:**
 
-* `nn.ConvTranspose2d`, skip connections
-* Loss functions: Dice Loss, BCEWithLogitsLoss
-* Segmentation masks encoding/decoding
-* Creating mask datasets from polygons
+* Train UNet on TrashNet masks
+* Overlay masks using OpenCV
 
-**👨‍💻 Mini Project:**
-
-* Train UNet on semantic segmentation dataset
-* Overlay masks on image with OpenCV
-
-**🧠 Concepts to Master:**
+**🧠 Master Concepts:**
 
 * Binary vs. multiclass segmentation
-* Handling overlapping masks
-* Use of sigmoid vs softmax
+* Pixel-wise accuracy, Dice coefficient
 
 ---
 
-### **Week 9: Explainability & Debugging**
+### **📅 Week 9: Explainability & Debugging**
 
-**✅ Objectives:**
+**🎯 Objectives:**
 
-* Interpret CNN decisions
-* Use tools like Captum and Grad-CAM
+* Interpret models using saliency and gradient methods
 
-**📚 Resources:**
+**📘 Learn This:**
 
-* [Captum Library](https://captum.ai/)
-* [Grad-CAM GitHub](https://github.com/jacobgil/pytorch-grad-cam)
+* Grad-CAM, Integrated Gradients (Captum)
+* Visualize filters, activations, saliency maps
 
-**👨‍💻 What to Learn:**
+**🧪 Mini Project:**
 
-* Saliency maps, occlusion sensitivity, Integrated Gradients
-* Visualizing layer activations
-* Why explainability matters in real-world AI
+* Apply Grad-CAM on misclassified samples
+* Visualize layer-wise features
 
-**👨‍💻 Mini Project:**
+**🧠 Master Concepts:**
 
-* Apply Grad-CAM on TrashNet CNN model
-* Compare heatmaps between true/false predictions
-
-**🧠 Concepts to Master:**
-
-* ReLU effect on saliency
-* Visualization of internal layers
+* Explainability for trust & debugging
+* ReLU and gradient flow
 
 ---
 
-### **Week 10: Optimization & Edge Deployment**
+### **📅 Week 10: Optimization & Edge Deployment**
 
-**✅ Objectives:**
+**🎯 Objectives:**
 
-* Optimize models for edge deployment
-* Export models to ONNX, TorchScript
+* Optimize and export models to run outside Python
 
-**📚 Resources:**
+**📘 Learn This:**
 
-* [ONNX Export Tutorial](https://pytorch.org/tutorials/advanced/super_resolution_with_onnxruntime.html)
-* [Quantization Guide](https://pytorch.org/docs/stable/quantization.html)
+* TorchScript: `torch.jit.script` vs. `trace`
+* Quantization: static, dynamic, aware
+* ONNX export, OpenCV DNN inference
 
-**👨‍💻 What to Learn:**
+**🧪 Mini Project:**
 
-* `torch.jit.script` vs `torch.jit.trace`
-* Static vs. dynamic quantization
-* Export to ONNX and run with OpenCV DNN
+* Export YOLO model to ONNX
+* Run inference with OpenCV
 
-**👨‍💻 Mini Project:**
+**🧠 Master Concepts:**
 
-* Quantize YOLO model
-* Export to ONNX, run live webcam inference
-
-**🧠 Concepts to Master:**
-
-* Accuracy drop after quantization
-* Speed-up metrics
-* Edge use-cases
+* Deployment trade-offs: speed vs. accuracy
+* Model compression techniques
 
 ---
 
-### **Week 11: Self-Supervised & Foundation Models**
+### **📅 Week 11: Self-Supervised + Foundation Models**
 
-**✅ Objectives:**
+**🎯 Objectives:**
 
-* Explore vision-language models and zero-shot inference
-* Learn about foundation models like CLIP and SAM
+* Work with CLIP, DINO, and SAM
 
-**📚 Resources:**
+**📘 Learn This:**
 
-* [CLIP GitHub](https://github.com/openai/CLIP)
-* [Segment Anything GitHub](https://github.com/facebookresearch/segment-anything)
-* Hugging Face Model Hub
+* CLIP embeddings (image + text)
+* Segment Anything Model architecture
+* SimCLR, DINO concepts
 
-**👨‍💻 What to Learn:**
+**🧪 Mini Project:**
 
-* CLIP: image and text embeddings
-* SAM: promptable segmentation
-* Contrastive learning: SimCLR, BYOL (concept only)
+* Use CLIP for zero-shot classification
+* Combine CLIP + SAM to segment and describe objects
 
-**👨‍💻 Mini Project:**
+**🧠 Master Concepts:**
 
-* Use CLIP for zero-shot TrashNet classification
-* Use SAM to segment objects and match descriptions
-
-**🧠 Concepts to Master:**
-
-* Prompt engineering for vision tasks
-* Foundation models training principles
+* Vision-language alignment
+* Promptable segmentation
 
 ---
 
-### **Week 12: Capstone Project 🚀**
+### **📅 Week 12: Transformers for Vision**
 
-**✅ Final Challenge:**
+**🎯 Objectives:**
 
-* Combine what you've learned into a real-world project
+* Master transformer architecture in the context of computer vision
+
+**📘 Learn This:**
+
+* Attention mechanism, Multi-Head Self-Attention, Positional Encoding
+* ViT (Vision Transformer): Patch embedding, tokenization
+* MAE (Masked Autoencoders), DeiT, Swin Transformer
+* Hugging Face `transformers` and `timm` integration
+
+**🧪 Mini Project:**
+
+* Implement or finetune ViT for TrashNet classification
+* Visualize attention maps from ViT model
+
+**🧠 Master Concepts:**
+
+* CNN vs Transformer: inductive bias, locality vs globality
+* Vision Transformers for classification, detection, and segmentation
+
+---
+
+### **📅 Week 13: Capstone Project 🚀**
+
+**🎯 Objective:**
+
+* Integrate your learnings into a full pipeline project
 
 **Project Ideas:**
 
-* Smart Waste Sorting Assistant (YOLO + UNet + Streamlit)
-* Real-time Sign Language Recognition
-* Drone Surveillance using YOLO + ViT
+* Waste Sorting Assistant (YOLO + UNet + Streamlit)
+* Drone Surveillance (YOLO + ViT)
+* Sign Language Recognition (CNN + RNN)
 
 **Deliverables:**
 
-* GitHub Repo
-* Streamlit or Gradio demo (optional)
-* Edge deployment script (optional)
+* GitHub repo
+* Streamlit/Gradio demo
+* ONNX/TorchScript deployment
 
 ---
 
-## 🛠️ Tools Checklist (Use Throughout):
+## 🧰 Essential Tools Checklist:
 
-* PyTorch, Torchvision
-* OpenCV, Albumentations
-* Matplotlib, Seaborn
-* Gradio, Streamlit
+* PyTorch, Torchvision, Albumentations, OpenCV
+* Matplotlib, Seaborn, Captum
+* Hugging Face Transformers, Timm
+* Gradio, Streamlit, Roboflow
 * ONNX, TorchScript
-* Roboflow, Label Studio
-* Docker (optional), Jetson Nano (optional)
 
 ---
 
-## 🎓 Final Words
+## 🎓 Final Advice from a CV Professor
 
-Stick to this plan, finish your mini-projects, post them online (LinkedIn, GitHub), and you'll be miles ahead. Keep going, you're literally training your brain like a neural net. 💪🔥
+> Learning CV is like training a deep net—hard at first, but incredible once it converges. Keep iterating, build mini-projects, and **teach others what you learn**. By the end of these 13 weeks, you’ll be capable of building production-grade vision applications using PyTorch and GenAI models.
+
+Ready to flex those neurons? Let’s gooo 🧠🔥
